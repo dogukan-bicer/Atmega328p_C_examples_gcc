@@ -17,7 +17,7 @@ TCCR2A = 0; // set entire TCCR2A register to 0
 TCCR2B = 0; // same for TCCR2B
 TCNT2  = 0; // initialize counter value to 0
 // set compare match register for 1000000 Hz increments
-OCR2A = 1; // = 16000000 / (1 * 1000000) - 1 (must be <256)
+OCR2A = 15; // = 16000000 / (1 * 1000000) - 1 (must be <256)
 // turn on CTC mode
 TCCR2B |= (1 << WGM21);
 // Set CS22, CS21 and CS20 bits for 1 prescaler
