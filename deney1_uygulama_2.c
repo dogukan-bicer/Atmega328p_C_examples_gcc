@@ -1,5 +1,5 @@
 void main () {
-   DDRD=0xEF;
+   DDRD=0xFF;
    PORTD=0x0l; // D portuna Hexadecimal 0x0l (Desimal 1) değeri yükleniyor.
 while (1)
  {
