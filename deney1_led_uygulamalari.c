@@ -1,20 +1,20 @@
-void main() {
-	DDRD=0xFF;
-	PORTD=0x00;
-	while (1)
-	{
-	// D Portunun tamamý çýkýþ olarak ayarlanýyor. // D Portuna Hexadecimal 0x00 (Desimal 0) deðeri yükleniyor.
-	if(PORTD<256)
-	{
-	    // Portun deðeri alabileceði en yüksek deðere kadar sayacak
-	    PORTD++; // Portun deðeri 1 arttirýliyor.
-	    Delay_ms(500); // 500 milisaniyelik gecikme
-	}
-	else
-	{
-	    PORTD=0x00; // Sayma bitiminde tekrar 0 yükleniyor.
-	}
-} // while'in parantezi
-}// main'in parantezi
+void main () {
+   DDRD=0xFF;
+   PORTD=0x0l; // D portuna Hexadecimal 0x0l (Desimal 1) deÄŸeri yÃ¼kleniyor.
+while (1)
+ {
+    PORTD=0B00000011;
+while (PORTD<128) // En soldaki bit (MSB) 1 olana kadar dÃ¶n (10000000 deÄŸerine kadar)
+  {
+   Delay_ms (200); // 200 milisaniye gecikme
+   PORTD= PORTD << 1; // D portundaki deÄŸeri sola bir kaydÄ±r
+  }
+while (PORTD>1) // En saÄŸdaki bit (LSB) 1 olana kadar dÃ¶n (00000001 deÄŸerine kadar)
+  {
+     Delay_ms (200);
+     PORTD= PORTD >> 1; // D portundaki deÄŸeri saÄŸa bir kaydÄ±r
+  }
+ }
+}
 
 
