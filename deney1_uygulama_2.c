@@ -1,17 +1,17 @@
 void main () {
    DDRD=0xEF;
-   PORTD-0x0l; // D portuna Hexadecimal 0x0l (Desimal 1) değeri yükleniyor.
+   PORTD=0x0l; // D portuna Hexadecimal 0x0l (Desimal 1) deÄŸeri yÃ¼kleniyor.
 while (1)
  {
-while (PORTD<128) // En soldaki bit (MSB) 1 olana kadar dön (10000000 değerine kadar)
+while (PORTD<128) // En soldaki bit (MSB) 1 olana kadar dÃ¶n (10000000 deÄŸerine kadar)
   {
   Delay_ms (200); // 200 milisaniye gecikme
-  PORTD= PORTD << 1; // D portundaki değeri sola bir kaydır
+  PORTD= PORTD << 1; // D portundaki deÄŸeri sola bir kaydÄ±r
   }
-while (PORTD>1) // En sağdaki bit (LSB) 1 olana kadar dön (00000001 değerine kadar)
+while (PORTD>1) // En saÄŸdaki bit (LSB) 1 olana kadar dÃ¶n (00000001 deÄŸerine kadar)
   {
      Delay_ms (200);
-     PORTD= PORTD >> 1; // D portundaki değeri sağa bir kaydır
+     PORTD= PORTD >> 1; // D portundaki deÄŸeri saÄŸa bir kaydÄ±r
   }
  }
 }
